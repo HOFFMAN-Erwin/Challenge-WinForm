@@ -23,11 +23,16 @@ namespace Challenge_WinForm
 
             try
             {
-                lineas = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"\db\socios.csv");
+                Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + @"\db");
+                string pather = AppDomain.CurrentDomain.BaseDirectory;
+                #if (DEBUG)
+                pather = Path.GetFullPath(Path.Combine(pather, @"..\..\"));
+                #endif
+                lineas = File.ReadAllLines(pather + @"\db\socios.csv");
             }
             catch (Exception de)
             {
-                Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + @"\db");
+                
                 Console.WriteLine(de);
                 MessageBox.Show("No se ha podido localizar la base de datos.", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
