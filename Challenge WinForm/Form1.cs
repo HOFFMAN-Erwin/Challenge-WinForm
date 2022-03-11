@@ -18,6 +18,11 @@ namespace Challenge_WinForm
         {
             InitializeComponent();
             mostrarArreglo.f1 = this;
+            InicializarDGV();
+        }
+
+        private void InicializarDGV()
+        {
             data_GV.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             data_GV.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             data_GV.ColumnHeadersDefaultCellStyle.Font = new Font(data_GV.Font, FontStyle.Bold);
@@ -35,7 +40,6 @@ namespace Challenge_WinForm
             data_GV.SelectionMode = DataGridViewSelectionMode.CellSelect;
             data_GV.MultiSelect = false;
         }
-
 
         private void btn_1_Click(object sender, EventArgs e)
         {
