@@ -18,6 +18,22 @@ namespace Challenge_WinForm
         {
             InitializeComponent();
             mostrarArreglo.f1 = this;
+            data_GV.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            data_GV.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            data_GV.ColumnHeadersDefaultCellStyle.Font = new Font(data_GV.Font, FontStyle.Bold);
+            data_GV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            data_GV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data_GV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            data_GV.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            data_GV.GridColor = Color.Black;
+            data_GV.RowHeadersVisible = false;
+            data_GV.AllowUserToOrderColumns = false;
+            data_GV.AllowUserToAddRows = false;
+            data_GV.AllowUserToDeleteRows = false;
+            data_GV.ReadOnly = true;
+            data_GV.AllowUserToResizeRows = false;
+            data_GV.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            data_GV.MultiSelect = false;
         }
 
 
@@ -66,22 +82,6 @@ namespace Challenge_WinForm
             data_GV.Columns.Clear();
             tablaTitulo.Text = titulo;
 
-            data_GV.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            data_GV.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            data_GV.ColumnHeadersDefaultCellStyle.Font = new Font(data_GV.Font, FontStyle.Bold);
-            data_GV.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            data_GV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            data_GV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            data_GV.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-            data_GV.GridColor = Color.Black;
-            data_GV.RowHeadersVisible = false;
-            data_GV.AllowUserToOrderColumns = false;
-            data_GV.AllowUserToAddRows = false;
-            data_GV.AllowUserToDeleteRows = false;
-            data_GV.ReadOnly = true;
-            data_GV.AllowUserToResizeRows = false;
-            data_GV.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            data_GV.MultiSelect = false;
 
             switch (gridType)
             {
