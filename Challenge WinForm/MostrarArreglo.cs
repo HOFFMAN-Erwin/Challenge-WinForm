@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -26,22 +27,18 @@ namespace Challenge_WinForm
             }
             catch (Exception de)
             {
+                Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + @"\db");
                 Console.WriteLine(de);
-                MessageBox.Show("No se ha podido localizar la base de datos.","Error",
+                MessageBox.Show("No se ha podido localizar la base de datos.", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Process.Start(AppDomain.CurrentDomain.BaseDirectory + @"\db");
+                throw;
+
             }
 
         }
 
-        public void CantidadDatos()
-        {
-            Console.WriteLine("Cantidad total de personas registradas: " + lineas.Length);
-            string titulo = "Cantidad total de personas registradas";
-            string[] row0Data = { lineas.Length.ToString() };
-            f1.FormatearGDV(1, titulo);
-            f1.PopularGDV(row0Data);
-        }
+        
 
 
         public Usuario CrearHincha(int edad, string nombre, string cuadro, string estadoCivil, string estudios)
@@ -87,6 +84,15 @@ namespace Challenge_WinForm
             nuevoEquipo.nombre = nombre;
             nuevoEquipo.promedioEdad = promedioEdad;
             return nuevoEquipo;
+        }
+
+        public void CantidadDatos()
+        {
+            Console.WriteLine("Cantidad total de personas registradas: " + lineas.Length);
+            string titulo = "Cantidad total de personas registradas";
+            string[] row0Data = { lineas.Length.ToString() };
+            f1.FormatearGDV(1, titulo);
+            f1.PopularGDV(row0Data);
         }
 
         public void PromedioEdadSociosRacin()

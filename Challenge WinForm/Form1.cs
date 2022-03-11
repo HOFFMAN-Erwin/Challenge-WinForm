@@ -67,7 +67,6 @@ namespace Challenge_WinForm
             data_GV.Refresh();
             data_GV.Columns.Clear();
             tablaTitulo.Text = "";
-
         }
 
         private void data_GV_CellContentClick(object sender, DataGridViewCellEventArgs e)
